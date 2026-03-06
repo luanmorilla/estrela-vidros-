@@ -12,23 +12,17 @@
       --bg: #06120e;
       --bg-2: #091a14;
       --bg-3: #0d241c;
-      --card: rgba(255, 255, 255, 0.055);
-      --card-2: rgba(255, 255, 255, 0.035);
-      --stroke: rgba(255, 255, 255, 0.10);
-      --stroke-strong: rgba(255, 255, 255, 0.18);
       --text: #ffffff;
       --text-soft: #d8e4de;
       --text-muted: #a9b9b1;
       --green-1: #7be0ae;
       --green-2: #3ba56f;
       --green-3: #163c2e;
-      --green-4: #0f2a20;
       --shadow-lg: 0 30px 70px rgba(0, 0, 0, 0.35);
       --shadow-md: 0 18px 35px rgba(0, 0, 0, 0.22);
       --radius-xl: 30px;
       --radius-lg: 24px;
       --radius-md: 18px;
-      --radius-sm: 14px;
       --container: 1200px;
       --header-h: 84px;
     }
@@ -84,7 +78,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(5, 16, 12, 0.72);
+      background: rgba(5, 16, 12, 0.78);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
@@ -94,7 +88,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
       position: relative;
     }
 
@@ -103,6 +97,7 @@
       align-items: center;
       gap: 14px;
       min-width: 0;
+      flex: 1;
     }
 
     .brand-mark {
@@ -177,6 +172,7 @@
       transition: transform 0.25s ease, filter 0.25s ease, background 0.25s ease, border-color 0.25s ease;
       cursor: pointer;
       white-space: nowrap;
+      text-align: center;
     }
 
     .btn:hover {
@@ -207,14 +203,20 @@
 
     .mobile-menu-btn {
       display: none;
-      min-height: 46px;
-      padding: 0 16px;
-      border-radius: 14px;
+      align-items: center;
+      justify-content: center;
+      min-width: 88px;
+      height: 48px;
+      padding: 0 18px;
+      border-radius: 16px;
       border: 1px solid rgba(255,255,255,0.12);
       background: rgba(255,255,255,0.04);
       color: var(--text);
-      font-weight: 700;
+      font-weight: 800;
+      font-size: 1rem;
       cursor: pointer;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+      flex-shrink: 0;
     }
 
     .hero {
@@ -226,7 +228,12 @@
       display: grid;
       grid-template-columns: 1.02fr 0.98fr;
       gap: 34px;
-      align-items: center;
+      align-items: start;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
     }
 
     .eyebrow {
@@ -269,6 +276,11 @@
       flex-wrap: wrap;
       gap: 14px;
       margin-bottom: 26px;
+    }
+
+    .hero-mobile-image {
+      display: none;
+      margin-bottom: 20px;
     }
 
     .hero-points {
@@ -623,7 +635,7 @@
     .whatsapp-float {
       position: fixed;
       right: 16px;
-      bottom: 16px;
+      bottom: 20px;
       z-index: 999;
       width: 64px;
       height: 64px;
@@ -679,11 +691,23 @@
       .cta-box {
         display: grid;
       }
+
+      .hero-visual {
+        display: none;
+      }
+
+      .hero-mobile-image {
+        display: block;
+      }
     }
 
     @media (max-width: 860px) {
       :root {
         --header-h: 76px;
+      }
+
+      .container {
+        width: min(94%, var(--container));
       }
 
       .mobile-menu-btn {
@@ -693,13 +717,13 @@
       .menu {
         display: none;
         position: absolute;
-        top: calc(var(--header-h) - 2px);
+        top: calc(var(--header-h) - 1px);
         left: 0;
         right: 0;
         padding: 18px 4% 22px;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
+        align-items: stretch;
+        gap: 14px;
         background: rgba(6, 18, 14, 0.98);
         border-top: 1px solid rgba(255,255,255,0.05);
         border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -710,8 +734,12 @@
         display: flex;
       }
 
+      .menu a:not(.btn) {
+        width: 100%;
+      }
+
       .hero {
-        padding-top: 32px;
+        padding-top: 24px;
       }
 
       .hero-grid,
@@ -723,10 +751,6 @@
       .about-grid,
       .contact-grid {
         grid-template-columns: 1fr;
-      }
-
-      .hero-card {
-        min-height: 500px;
       }
 
       .section-head {
@@ -749,16 +773,31 @@
     }
 
     @media (max-width: 560px) {
-      .container {
-        width: min(94%, var(--container));
+      .brand {
+        gap: 12px;
+      }
+
+      .brand-mark {
+        width: 48px;
+        height: 48px;
+        font-size: 1.15rem;
+        border-radius: 15px;
       }
 
       .brand-text h1 {
-        font-size: 1rem;
+        font-size: 0.96rem;
       }
 
       .brand-text span {
-        font-size: 0.84rem;
+        font-size: 0.8rem;
+      }
+
+      .mobile-menu-btn {
+        min-width: 78px;
+        height: 44px;
+        padding: 0 14px;
+        border-radius: 14px;
+        font-size: 0.98rem;
       }
 
       .hero h2 {
@@ -774,7 +813,8 @@
       }
 
       .hero-card {
-        min-height: 420px;
+        min-height: 340px;
+        border-radius: 24px;
       }
 
       .hero-overlay {
@@ -782,6 +822,7 @@
         right: 14px;
         bottom: 14px;
         padding: 16px;
+        border-radius: 18px;
       }
 
       .mini-card {
@@ -796,6 +837,13 @@
         width: 58px;
         height: 58px;
         font-size: 1.4rem;
+        right: 14px;
+        bottom: 92px;
+      }
+
+      .eyebrow {
+        font-size: 0.9rem;
+        padding: 10px 14px;
       }
     }
   </style>
@@ -827,9 +875,11 @@
   <main>
     <section class="hero" id="inicio">
       <div class="container hero-grid">
-        <div class="reveal">
+        <div class="hero-content reveal">
           <div class="eyebrow">Atendimento em Mogi das Cruzes, Igaratá, SP e região</div>
+
           <h2>Vidro com presença, acabamento e padrão <strong>premium</strong>.</h2>
+
           <p>
             A <strong>Estrela Vidros</strong> transforma projetos em ambientes sofisticados, modernos e valorizados. Com atuação forte na região e execução profissional, a empresa entrega soluções em vidro com estética impecável, segurança e atenção real a cada detalhe.
           </p>
@@ -837,6 +887,18 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/551191033084?text=Olá,%20vim%20pelo%20site%20da%20Estrela%20Vidros%20e%20quero%20solicitar%20um%20orçamento." target="_blank">Solicitar orçamento</a>
             <a class="btn btn-secondary" href="#projetos">Ver projetos</a>
+          </div>
+
+          <div class="hero-mobile-image">
+            <div class="hero-card">
+              <img src="images/hero.jpg" alt="Projeto premium em vidro da Estrela Vidros" />
+              <div class="hero-overlay">
+                <h3>Projetos que elevam o valor do imóvel</h3>
+                <p>
+                  Soluções em vidro com visual moderno, execução segura e acabamento elegante para residências e espaços comerciais.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div class="hero-points">
