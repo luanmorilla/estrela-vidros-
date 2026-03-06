@@ -15,6 +15,7 @@
       --text-muted: #a9b9b1;
       --green-1: #7be0ae;
       --green-2: #3ba56f;
+      --green-3: #163c2e;
       --shadow-lg: 0 30px 70px rgba(0, 0, 0, 0.35);
       --shadow-md: 0 18px 35px rgba(0, 0, 0, 0.22);
       --radius-xl: 30px;
@@ -97,34 +98,34 @@
     }
 
     .brand-mark {
-      width: 50px;
-      height: 50px;
-      border-radius: 16px;
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
       display: grid;
       place-items: center;
       background: linear-gradient(135deg, var(--green-1), var(--green-2));
       color: #fff;
-      font-weight: 800;
-      font-size: 1.2rem;
+      font-size: 1.7rem;
       box-shadow: 0 18px 35px rgba(59, 165, 111, 0.35);
       flex-shrink: 0;
     }
 
-    .brand-text {
-      min-width: 0;
-    }
-
-    .brand-text h1 {
-      font-size: 1.08rem;
-      line-height: 1.05;
-      letter-spacing: 0.4px;
-    }
-
-    .brand-text span {
-      display: block;
-      margin-top: 3px;
-      color: var(--text-soft);
-      font-size: 0.92rem;
+    .mobile-menu-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      min-width: 88px;
+      height: 48px;
+      padding: 0 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+      flex-shrink: 0;
     }
 
     .menu {
@@ -197,27 +198,9 @@
       border-color: rgba(255,255,255,0.18);
     }
 
-    .mobile-menu-btn {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      min-width: 88px;
-      height: 48px;
-      padding: 0 18px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      color: var(--text);
-      font-weight: 800;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
-      flex-shrink: 0;
-    }
-
     .hero {
       position: relative;
-      padding: 58px 0 34px;
+      padding: 34px 0 34px;
     }
 
     .hero-grid {
@@ -232,18 +215,43 @@
       flex-direction: column;
     }
 
-    .eyebrow {
+    .company-pill {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 18px;
-      padding: 9px 14px;
+      gap: 12px;
+      width: fit-content;
+      margin-bottom: 20px;
+      padding: 12px 18px;
       border-radius: 999px;
-      font-size: 0.92rem;
-      color: #c7f5dd;
-      border: 1px solid rgba(123, 224, 174, 0.20);
+      font-size: 1rem;
+      font-weight: 800;
+      color: #dcffec;
+      border: 1px solid rgba(123, 224, 174, 0.22);
       background: rgba(123, 224, 174, 0.08);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.02),
+        0 10px 25px rgba(0,0,0,0.12);
+      animation: glowPulse 2.8s ease-in-out infinite;
+    }
+
+    .company-pill .star {
+      font-size: 1.15rem;
+      color: #9ff3c9;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% {
+        box-shadow:
+          inset 0 0 0 1px rgba(255,255,255,0.02),
+          0 10px 25px rgba(0,0,0,0.12),
+          0 0 0 rgba(123,224,174,0);
+      }
+      50% {
+        box-shadow:
+          inset 0 0 0 1px rgba(255,255,255,0.02),
+          0 10px 25px rgba(0,0,0,0.12),
+          0 0 24px rgba(123,224,174,0.14);
+      }
     }
 
     .hero h2 {
@@ -355,10 +363,10 @@
       position: absolute;
       left: 22px;
       right: 22px;
-      bottom: 22px;
+      bottom: 10px;
       z-index: 2;
       border-radius: 24px;
-      padding: 20px;
+      padding: 16px;
       background: rgba(8, 18, 14, 0.68);
       border: 1px solid rgba(255,255,255,0.10);
       backdrop-filter: blur(12px);
@@ -366,14 +374,14 @@
     }
 
     .hero-overlay h3 {
-      font-size: 1.16rem;
-      margin-bottom: 8px;
+      font-size: 1.12rem;
+      margin-bottom: 6px;
     }
 
     .hero-overlay p {
       margin: 0;
       color: var(--text-soft);
-      font-size: 0.96rem;
+      font-size: 0.94rem;
     }
 
     section {
@@ -770,23 +778,11 @@
     }
 
     @media (max-width: 560px) {
-      .brand {
-        gap: 12px;
-      }
-
       .brand-mark {
-        width: 48px;
-        height: 48px;
-        font-size: 1.15rem;
-        border-radius: 15px;
-      }
-
-      .brand-text h1 {
-        font-size: 0.96rem;
-      }
-
-      .brand-text span {
-        font-size: 0.8rem;
+        width: 52px;
+        height: 52px;
+        font-size: 1.45rem;
+        border-radius: 16px;
       }
 
       .mobile-menu-btn {
@@ -795,6 +791,13 @@
         padding: 0 14px;
         border-radius: 14px;
         font-size: 0.98rem;
+      }
+
+      .company-pill {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.98rem;
+        padding: 12px 16px;
       }
 
       .hero h2 {
@@ -810,7 +813,7 @@
       }
 
       .hero-card {
-        min-height: 350px;
+        min-height: 300px;
         border-radius: 24px;
       }
 
@@ -821,8 +824,8 @@
       .hero-overlay {
         left: 14px;
         right: 14px;
-        bottom: 2px;
-        padding: 10px;
+        bottom: 6px;
+        padding: 12px;
         border-radius: 18px;
       }
 
@@ -854,34 +857,25 @@
         right: 14px;
         bottom: 92px;
       }
-
-      .eyebrow {
-        font-size: 0.9rem;
-        padding: 10px 14px;
-      }
     }
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a href="#inicio" class="brand">
-        <div class="brand-mark">EV</div>
-        <div class="brand-text">
-          <h1>ESTRELA VIDROS</h1>
-          <span>Esquadrias de Vidro com padrão premium</span>
-        </div>
+      <a href="#inicio" class="brand" aria-label="Estrela Vidros">
+        <div class="brand-mark">✦</div>
       </a>
 
       <button class="mobile-menu-btn" id="mobileMenuBtn">Menu</button>
 
       <nav class="menu" id="menu">
         <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
         <a href="#projetos">Projetos</a>
+        <a href="#servicos">Serviços</a>
         <a href="#atendimento">Atendimento</a>
         <a href="#contato">Contato</a>
-        <a class="btn btn-primary" href="https://wa.me/551191033084?text=Olá,%20vim%20pelo%20site%20da%20Estrela%20Vidros%20e%20quero%20solicitar%20um%20orçamento." target="_blank">Solicitar orçamento</a>
+        <a class="btn btn-primary" href="https://wa.me/5511981033084?text=Olá,%20vim%20pelo%20site%20da%20Estrela%20Vidros%20e%20quero%20solicitar%20um%20orçamento." target="_blank">Solicitar orçamento</a>
       </nav>
     </div>
   </header>
@@ -890,7 +884,7 @@
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="hero-content reveal">
-          <div class="eyebrow">Atendimento em Mogi das Cruzes, Igaratá, SP e região</div>
+          <div class="company-pill"><span class="star">✦</span> ESTRELA VIDROS</div>
 
           <h2>Vidro com presença, acabamento e padrão <strong>premium</strong>.</h2>
 
@@ -899,7 +893,7 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/551191033084?text=Olá,%20vim%20pelo%20site%20da%20Estrela%20Vidros%20e%20quero%20solicitar%20um%20orçamento." target="_blank">Solicitar orçamento</a>
+            <a class="btn btn-primary" href="https://wa.me/5511981033084?text=Olá,%20vim%20pelo%20site%20da%20Estrela%20Vidros%20e%20quero%20solicitar%20um%20orçamento." target="_blank">Solicitar orçamento</a>
             <a class="btn btn-secondary" href="#projetos">Ver projetos</a>
           </div>
 
@@ -977,6 +971,83 @@
               <li>Soluções que valorizam residências e comércios</li>
               <li>Presença forte em Mogi das Cruzes e região</li>
             </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h3>Projetos realizados</h3>
+            <p>Galeria com imagens reais da empresa para reforçar autoridade, qualidade de execução e percepção premium.</p>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="card gallery-item reveal">
+            <div class="gallery-photo"><img src="images/projeto1.jpg" alt="Escada com guarda-corpo em vidro" /></div>
+            <div class="gallery-info">
+              <strong>Guarda-corpo em vidro</strong>
+              <p>Solução sofisticada para interiores com visual leve e acabamento refinado.</p>
+            </div>
+          </article>
+
+          <article class="card gallery-item reveal">
+            <div class="gallery-photo"><img src="images/projeto2.jpg" alt="Box de banheiro em vidro" /></div>
+            <div class="gallery-info">
+              <strong>Box com estética clean</strong>
+              <p>Projeto funcional com transparência, elegância e presença discreta.</p>
+            </div>
+          </article>
+
+          <article class="card gallery-item reveal">
+            <div class="gallery-photo"><img src="images/projeto3.jpg" alt="Banheiro com box de vidro" /></div>
+            <div class="gallery-info">
+              <strong>Acabamento impecável</strong>
+              <p>Aplicação sob medida para valorizar o espaço e manter a sofisticação do ambiente.</p>
+            </div>
+          </article>
+
+          <article class="card gallery-item reveal">
+            <div class="gallery-photo"><img src="images/projeto4.jpg" alt="Cobertura de vidro em área com piscina" /></div>
+            <div class="gallery-info">
+              <strong>Cobertura de vidro</strong>
+              <p>Proteção, luminosidade e visual moderno para áreas externas premium.</p>
+            </div>
+          </article>
+
+          <article class="card gallery-item reveal">
+            <div class="gallery-photo"><img src="images/projeto5.jpg" alt="Estrutura de cobertura de vidro" /></div>
+            <div class="gallery-info">
+              <strong>Estrutura robusta e elegante</strong>
+              <p>Projeto que combina presença arquitetônica, segurança e transparência.</p>
+            </div>
+          </article>
+
+          <article class="card gallery-item reveal">
+            <div class="gallery-photo"><img src="images/projeto6.jpg" alt="Cobertura de vidro vista por baixo" /></div>
+            <div class="gallery-info">
+              <strong>Integração e iluminação</strong>
+              <p>Vidro aplicado para ampliar a entrada de luz e destacar o ambiente.</p>
+            </div>
+          </article>
+
+          <article class="card gallery-item reveal">
+            <div class="gallery-photo"><img src="images/projeto7.jpg" alt="Painel de espelho decorativo" /></div>
+            <div class="gallery-info">
+              <strong>Espelhos decorativos</strong>
+              <p>Composição sofisticada para interiores com visual contemporâneo.</p>
+            </div>
+          </article>
+
+          <article class="card gallery-item reveal">
+            <div class="gallery-photo"><img src="images/projeto8.jpg" alt="Banheiro premium com fechamento em vidro" /></div>
+            <div class="gallery-info">
+              <strong>Banheiro premium</strong>
+              <p>Projeto com linguagem moderna, transparência e acabamento de alto padrão.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -1064,83 +1135,6 @@
       </div>
     </section>
 
-    <section id="projetos">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <h3>Projetos realizados</h3>
-            <p>Galeria com imagens reais da empresa para reforçar autoridade, qualidade de execução e percepção premium.</p>
-          </div>
-        </div>
-
-        <div class="gallery-grid">
-          <article class="card gallery-item reveal">
-            <div class="gallery-photo"><img src="images/projeto1.jpg" alt="Escada com guarda-corpo em vidro" /></div>
-            <div class="gallery-info">
-              <strong>Guarda-corpo em vidro</strong>
-              <p>Solução sofisticada para interiores com visual leve e acabamento refinado.</p>
-            </div>
-          </article>
-
-          <article class="card gallery-item reveal">
-            <div class="gallery-photo"><img src="images/projeto2.jpg" alt="Box de banheiro em vidro" /></div>
-            <div class="gallery-info">
-              <strong>Box com estética clean</strong>
-              <p>Projeto funcional com transparência, elegância e presença discreta.</p>
-            </div>
-          </article>
-
-          <article class="card gallery-item reveal">
-            <div class="gallery-photo"><img src="images/projeto3.jpg" alt="Banheiro com box de vidro" /></div>
-            <div class="gallery-info">
-              <strong>Acabamento impecável</strong>
-              <p>Aplicação sob medida para valorizar o espaço e manter a sofisticação do ambiente.</p>
-            </div>
-          </article>
-
-          <article class="card gallery-item reveal">
-            <div class="gallery-photo"><img src="images/projeto4.jpg" alt="Cobertura de vidro em área com piscina" /></div>
-            <div class="gallery-info">
-              <strong>Cobertura de vidro</strong>
-              <p>Proteção, luminosidade e visual moderno para áreas externas premium.</p>
-            </div>
-          </article>
-
-          <article class="card gallery-item reveal">
-            <div class="gallery-photo"><img src="images/projeto5.jpg" alt="Estrutura de cobertura de vidro" /></div>
-            <div class="gallery-info">
-              <strong>Estrutura robusta e elegante</strong>
-              <p>Projeto que combina presença arquitetônica, segurança e transparência.</p>
-            </div>
-          </article>
-
-          <article class="card gallery-item reveal">
-            <div class="gallery-photo"><img src="images/projeto6.jpg" alt="Cobertura de vidro vista por baixo" /></div>
-            <div class="gallery-info">
-              <strong>Integração e iluminação</strong>
-              <p>Vidro aplicado para ampliar a entrada de luz e destacar o ambiente.</p>
-            </div>
-          </article>
-
-          <article class="card gallery-item reveal">
-            <div class="gallery-photo"><img src="images/projeto7.jpg" alt="Painel de espelho decorativo" /></div>
-            <div class="gallery-info">
-              <strong>Espelhos decorativos</strong>
-              <p>Composição sofisticada para interiores com visual contemporâneo.</p>
-            </div>
-          </article>
-
-          <article class="card gallery-item reveal">
-            <div class="gallery-photo"><img src="images/projeto8.jpg" alt="Banheiro premium com fechamento em vidro" /></div>
-            <div class="gallery-info">
-              <strong>Banheiro premium</strong>
-              <p>Projeto com linguagem moderna, transparência e acabamento de alto padrão.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section id="atendimento">
       <div class="container">
         <div class="section-head reveal">
@@ -1180,7 +1174,7 @@
               Solicite seu orçamento com a Estrela Vidros e tenha atendimento profissional, apresentação impecável e uma solução pensada para valorizar o seu espaço.
             </p>
           </div>
-          <a class="btn btn-primary" href="https://wa.me/551191033084?text=Olá,%20vim%20pelo%20site%20da%20Estrela%20Vidros%20e%20quero%20solicitar%20um%20orçamento." target="_blank">Solicitar orçamento</a>
+          <a class="btn btn-primary" href="https://wa.me/5511981033084?text=Olá,%20vim%20pelo%20site%20da%20Estrela%20Vidros%20e%20quero%20solicitar%20um%20orçamento." target="_blank">Solicitar orçamento</a>
         </div>
       </div>
     </section>
@@ -1198,7 +1192,7 @@
           <article class="card reveal">
             <div class="contact-item">
               <span>WhatsApp</span>
-              <strong>(11) 91033-084</strong>
+              <strong>+55 11 98103-3084</strong>
             </div>
             <br />
             <div class="contact-item">
@@ -1218,7 +1212,7 @@
               Na Estrela Vidros, cada projeto é tratado com responsabilidade, bom gosto e atenção aos detalhes. O objetivo é entregar mais do que vidro: entregar valorização, sofisticação e confiança em cada ambiente.
             </p>
             <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
-              <a class="btn btn-primary" href="https://wa.me/551191033084?text=Olá,%20vim%20pelo%20site%20da%20Estrela%20Vidros%20e%20quero%20solicitar%20um%20orçamento." target="_blank">Falar no WhatsApp</a>
+              <a class="btn btn-primary" href="https://wa.me/5511981033084?text=Olá,%20vim%20pelo%20site%20da%20Estrela%20Vidros%20e%20quero%20solicitar%20um%20orçamento." target="_blank">Falar no WhatsApp</a>
               <a class="btn btn-secondary" href="https://www.instagram.com/daniloestrelavidros/" target="_blank">Ver Instagram</a>
             </div>
           </article>
@@ -1234,7 +1228,7 @@
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/551191033084?text=Olá,%20vim%20pelo%20site%20da%20Estrela%20Vidros%20e%20quero%20solicitar%20um%20orçamento." target="_blank" aria-label="Falar no WhatsApp">✆</a>
+  <a class="whatsapp-float" href="https://wa.me/5511981033084?text=Olá,%20vim%20pelo%20site%20da%20Estrela%20Vidros%20e%20quero%20solicitar%20um%20orçamento." target="_blank" aria-label="Falar no WhatsApp">✆</a>
 
   <script>
     const mobileMenuBtn = document.getElementById("mobileMenuBtn");
