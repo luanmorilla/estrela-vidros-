@@ -215,29 +215,47 @@
       flex-direction: column;
     }
 
-    .company-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      width: fit-content;
-      margin-bottom: 20px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-size: 1rem;
-      font-weight: 800;
-      color: #dcffec;
-      border: 1px solid rgba(123, 224, 174, 0.22);
-      background: rgba(123, 224, 174, 0.08);
-      box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,0.02),
-        0 10px 25px rgba(0,0,0,0.12);
-      animation: glowPulse 2.8s ease-in-out infinite;
-    }
+    .company-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
 
-    .company-pill .star {
-      font-size: 1.15rem;
-      color: #9ff3c9;
-    }
+  padding:14px 26px;
+  border-radius:999px;
+
+  font-weight:700;
+  letter-spacing:1px;
+  font-size:0.95rem;
+
+  color:#d8ffe9;
+
+  border:1px solid rgba(123,224,174,0.35);
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(123,224,174,0.18),
+    rgba(123,224,174,0.05)
+  );
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+  0 10px 25px rgba(0,0,0,0.25),
+  inset 0 0 12px rgba(123,224,174,0.15);
+
+  animation: brandGlow 3s ease-in-out infinite;
+}
+
+.company-pill .star{
+  font-size:1.1rem;
+  color:#9ff3c9;
+}
+
+.brand-name{
+  font-weight:800;
+  letter-spacing:2px;
+}
 
     @keyframes glowPulse {
       0%, 100% {
@@ -253,7 +271,27 @@
           0 0 24px rgba(123,224,174,0.14);
       }
     }
+    @keyframes brandGlow{
 
+0%{
+box-shadow:
+0 0 0 rgba(123,224,174,0),
+0 10px 25px rgba(0,0,0,0.25);
+}
+
+50%{
+box-shadow:
+0 0 18px rgba(123,224,174,0.35),
+0 10px 25px rgba(0,0,0,0.25);
+}
+
+100%{
+box-shadow:
+0 0 0 rgba(123,224,174,0),
+0 10px 25px rgba(0,0,0,0.25);
+}
+
+}
     .hero h2 {
       font-size: clamp(2.3rem, 5vw, 4.9rem);
       line-height: 0.98;
@@ -884,9 +922,11 @@
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="hero-content reveal">
-          <div class="company-pill"><span class="star">✦</span> ESTRELA VIDROS</div>
-
-          <h2>Vidro com presença, acabamento e padrão <strong>premium</strong>.</h2>
+            <div class="company-pill">
+                <span class="star">✦</span>
+                <span class="brand-name">ESTRELA VIDROS</span>
+              </div>
+          <h2>Vidros com presença, acabamento e padrão <strong>premium</strong>.</h2>
 
           <p>
             A <strong>Estrela Vidros</strong> transforma projetos em ambientes sofisticados, modernos e valorizados. Com atuação forte na região e execução profissional, a empresa entrega soluções em vidro com estética impecável, segurança e atenção real a cada detalhe.
