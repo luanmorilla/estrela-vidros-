@@ -10,19 +10,15 @@
   <style>
     :root {
       --bg: #06120e;
-      --bg-2: #091a14;
-      --bg-3: #0d241c;
       --text: #ffffff;
       --text-soft: #d8e4de;
       --text-muted: #a9b9b1;
       --green-1: #7be0ae;
       --green-2: #3ba56f;
-      --green-3: #163c2e;
       --shadow-lg: 0 30px 70px rgba(0, 0, 0, 0.35);
       --shadow-md: 0 18px 35px rgba(0, 0, 0, 0.22);
       --radius-xl: 30px;
       --radius-lg: 24px;
-      --radius-md: 18px;
       --container: 1200px;
       --header-h: 84px;
     }
@@ -325,7 +321,7 @@
 
     .hero-card {
       position: relative;
-      min-height: 640px;
+      min-height: 610px;
       border-radius: var(--radius-xl);
       overflow: hidden;
       border: 1px solid rgba(255,255,255,0.08);
@@ -340,7 +336,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center center;
+      object-position: center top;
       filter: saturate(1.02) contrast(1.03);
       transform: scale(1.01);
     }
@@ -350,8 +346,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.12) 40%, rgba(0,0,0,0.76) 100%),
-        linear-gradient(135deg, rgba(7, 20, 15, 0.12), rgba(7, 20, 15, 0.02));
+        linear-gradient(180deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.10) 38%, rgba(0,0,0,0.72) 100%),
+        linear-gradient(135deg, rgba(7, 20, 15, 0.10), rgba(7, 20, 15, 0.02));
       z-index: 1;
     }
 
@@ -530,7 +526,7 @@
     }
 
     .gallery-photo {
-      aspect-ratio: 1 / 1.05;
+      aspect-ratio: 1 / 1.02;
       overflow: hidden;
       border-bottom: 1px solid rgba(255,255,255,0.08);
       background: #0b1813;
@@ -540,11 +536,12 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 24%;
       transition: transform 0.45s ease, filter 0.45s ease;
     }
 
     .gallery-item:hover .gallery-photo img {
-      transform: scale(1.06);
+      transform: scale(1.05);
       filter: saturate(1.04) contrast(1.04);
     }
 
@@ -813,8 +810,12 @@
       }
 
       .hero-card {
-        min-height: 340px;
+        min-height: 300px;
         border-radius: 24px;
+      }
+
+      .hero-card img {
+        object-position: center top;
       }
 
       .hero-overlay {
@@ -825,12 +826,25 @@
         border-radius: 18px;
       }
 
+      .hero-overlay h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+      }
+
+      .hero-overlay p {
+        font-size: 0.9rem;
+      }
+
       .mini-card {
         padding: 16px;
       }
 
       .gallery-photo {
-        aspect-ratio: 1 / 1.1;
+        aspect-ratio: 1 / 0.9;
+      }
+
+      .gallery-photo img {
+        object-position: center 18%;
       }
 
       .whatsapp-float {
