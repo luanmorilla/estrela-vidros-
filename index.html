@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Estrela Vidros | Esquadrias de Vidro em Mogi das Cruzes e Região</title>
+  <meta name="description" content="Estrela Vidros — Esquadrias de vidro com acabamento premium, sofisticação, segurança e atendimento profissional em Mogi das Cruzes, Igaratá, SP e região." />
+  <meta name="theme-color" content="#0e241d" />
+
+  <style>
+    :root {
+      --bg: #06120e;
+      --bg-2: #091a14;
+      --bg-3: #0d241c;
+      --card: rgba(255, 255, 255, 0.055);
+      --card-2: rgba(255, 255, 255, 0.035);
+      --stroke: rgba(255, 255, 255, 0.10);
+      --stroke-strong: rgba(255, 255, 255, 0.18);
+      --text: #ffffff;
+      --text-soft: #d8e4de;
+      --text-muted: #a9b9b1;
+      --green-1: #7be0ae;
+      --green-2: #3ba56f;
+      --green-3: #163c2e;
+      --green-4: #0f2a20;
+      --shadow-lg: 0 30px 70px rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 18px 35px rgba(0, 0, 0, 0.22);
+      --radius-xl: 30px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+      --container: 1200px;
+      --header-h: 84px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(123, 224, 174, 0.14), transparent 20%),
+        radial-gradient(circle at 100% 10%, rgba(59, 165, 111, 0.12), transparent 18%),
+        linear-gradient(180deg, #04100c 0%, #06120e 32%, #07140f 100%);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(255,255,255,0.015), rgba(255,255,255,0.015)),
+        radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.12) 100%);
+      z-index: -1;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(92%, var(--container));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 16, 12, 0.72);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      min-height: var(--header-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: relative;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--green-1), var(--green-2));
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.2rem;
+      box-shadow: 0 18px 35px rgba(59, 165, 111, 0.35);
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-text h1 {
+      font-size: 1.08rem;
+      line-height: 1.05;
+      letter-spacing: 0.4px;
+    }
+
+    .brand-text span {
+      display: block;
+      margin-top: 3px;
+      color: var(--text-soft);
+      font-size: 0.92rem;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--text-soft);
+      font-size: 0.98rem;
+    }
+
+    .menu a:not(.btn)::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      margin-top: 5px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--green-1), var(--green-2));
+      transition: width .25s ease;
+    }
+
+    .menu a:not(.btn):hover {
+      color: var(--text);
+    }
+
+    .menu a:not(.btn):hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      font-size: 0.98rem;
+      transition: transform 0.25s ease, filter 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--green-1), var(--green-2));
+      box-shadow: 0 16px 34px rgba(40, 145, 96, 0.34);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border-color: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      min-height: 46px;
+      padding: 0 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      padding: 58px 0 34px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      color: #c7f5dd;
+      border: 1px solid rgba(123, 224, 174, 0.20);
+      background: rgba(123, 224, 174, 0.08);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+    }
+
+    .hero h2 {
+      font-size: clamp(2.3rem, 5vw, 4.9rem);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+      max-width: 11.5ch;
+    }
+
+    .hero h2 strong {
+      color: #98f2c6;
+      display: inline-block;
+      text-shadow: 0 0 28px rgba(123, 224, 174, 0.14);
+    }
+
+    .hero p {
+      font-size: 1.06rem;
+      color: var(--text-soft);
+      max-width: 58ch;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .mini-card {
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow-md);
+    }
+
+    .mini-card strong {
+      display: block;
+      font-size: 1.12rem;
+      margin-bottom: 5px;
+    }
+
+    .mini-card span {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: -20px -24px auto auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(123, 224, 174, 0.18), transparent 68%);
+      filter: blur(16px);
+      pointer-events: none;
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 640px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow-lg);
+      background: #0b1813;
+      isolation: isolate;
+    }
+
+    .hero-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      filter: saturate(1.02) contrast(1.03);
+      transform: scale(1.01);
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.12) 40%, rgba(0,0,0,0.76) 100%),
+        linear-gradient(135deg, rgba(7, 20, 15, 0.12), rgba(7, 20, 15, 0.02));
+      z-index: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      z-index: 2;
+      border-radius: 24px;
+      padding: 20px;
+      background: rgba(8, 18, 14, 0.68);
+      border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.18);
+    }
+
+    .hero-overlay h3 {
+      font-size: 1.16rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-overlay p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 0.96rem;
+    }
+
+    section {
+      padding: 46px 0;
+      scroll-margin-top: 105px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 22px;
+      margin-bottom: 28px;
+    }
+
+    .section-head h3 {
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      line-height: 1.04;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+    }
+
+    .section-head p {
+      color: var(--text-soft);
+      max-width: 65ch;
+    }
+
+    .about-grid,
+    .service-grid,
+    .gallery-grid,
+    .areas-grid,
+    .contact-grid,
+    .differentials-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .about-grid,
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .service-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .differentials-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .gallery-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .areas-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      position: relative;
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,0.08);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025)),
+        linear-gradient(135deg, rgba(255,255,255,0.01), rgba(255,255,255,0));
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(123,224,174,0.05), transparent 30%, transparent 70%, rgba(123,224,174,0.03));
+      pointer-events: none;
+    }
+
+    .card h4 {
+      font-size: 1.28rem;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card p,
+    .card li,
+    .card span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card p,
+    .card li {
+      color: var(--text-soft);
+    }
+
+    .list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .list li {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .list li::before {
+      content: "•";
+      position: absolute;
+      left: 8px;
+      top: -1px;
+      color: var(--green-1);
+      font-size: 1.1rem;
+    }
+
+    .service-card {
+      min-height: 100%;
+    }
+
+    .service-card .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #d3f8e6;
+      background: rgba(123, 224, 174, 0.08);
+      border: 1px solid rgba(123, 224, 174, 0.18);
+    }
+
+    .diff-card strong,
+    .area-item strong,
+    .gallery-info strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .gallery-item {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .gallery-photo {
+      aspect-ratio: 1 / 1.05;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: #0b1813;
+    }
+
+    .gallery-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease, filter 0.45s ease;
+    }
+
+    .gallery-item:hover .gallery-photo img {
+      transform: scale(1.06);
+      filter: saturate(1.04) contrast(1.04);
+    }
+
+    .gallery-info {
+      padding: 18px;
+    }
+
+    .area-item {
+      text-align: center;
+    }
+
+    .cta {
+      padding: 58px 0;
+    }
+
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      padding: 38px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      border: 1px solid rgba(123,224,174,0.16);
+      background:
+        radial-gradient(circle at top left, rgba(123,224,174,0.16), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(59,165,111,0.10), transparent 24%),
+        linear-gradient(135deg, #10261d 0%, #081611 100%);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cta-box::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(123,224,174,0.16), transparent 68%);
+      pointer-events: none;
+    }
+
+    .cta-box h3 {
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      line-height: 1.04;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-box p {
+      color: var(--text-soft);
+      max-width: 60ch;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .contact-item span {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .contact-item strong {
+      font-size: 1.12rem;
+    }
+
+    footer {
+      padding: 28px 0 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      color: var(--text-muted);
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 999;
+      width: 64px;
+      height: 64px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 1.55rem;
+      background: linear-gradient(135deg, #2fd67b, #129255);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.34);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(47,214,123,0.35), 0 16px 32px rgba(0,0,0,0.34); }
+      70% { box-shadow: 0 0 0 16px rgba(47,214,123,0), 0 16px 32px rgba(0,0,0,0.34); }
+      100% { box-shadow: 0 0 0 0 rgba(47,214,123,0), 0 16px 32px rgba(0,0,0,0.34); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1180px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid,
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .differentials-grid,
+      .areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero h2 {
+        max-width: 100%;
+      }
+
+      .cta-box {
+        display: grid;
+      }
+    }
+
+    @media (max-width: 860px) {
+      :root {
+        --header-h: 76px;
+      }
+
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+
+      .menu {
+        display: none;
+        position: absolute;
+        top: calc(var(--header-h) - 2px);
+        left: 0;
+        right: 0;
+        padding: 18px 4% 22px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        background: rgba(6, 18, 14, 0.98);
+        border-top: 1px solid rgba(255,255,255,0.05);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        box-shadow: 0 20px 30px rgba(0,0,0,0.24);
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .hero {
+        padding-top: 32px;
+      }
+
+      .hero-grid,
+      .hero-points,
+      .service-grid,
+      .gallery-grid,
+      .differentials-grid,
+      .areas-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-height: 500px;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cta-box,
+      .card {
+        padding: 24px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(94%, var(--container));
+      }
+
+      .brand-text h1 {
+        font-size: 1rem;
+      }
+
+      .brand-text span {
+        font-size: 0.84rem;
+      }
+
+      .hero h2 {
+        font-size: clamp(2.1rem, 12vw, 3rem);
+        letter-spacing: -1.4px;
+      }
+
+      .hero p,
+      .section-head p,
+      .card p,
+      .card li {
+        font-size: 0.97rem;
+      }
+
+      .hero-card {
+        min-height: 420px;
+      }
+
+      .hero-overlay {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        padding: 16px;
+      }
+
+      .mini-card {
+        padding: 16px;
+      }
+
+      .gallery-photo {
+        aspect-ratio: 1 / 1.1;
+      }
+
+      .whatsapp-float {
+        width: 58px;
+        height: 58px;
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#inicio" class="brand">
+        <div class="brand-mark">EV</div>
+        <div class="brand-text">
+          <h1>ESTRELA VIDROS</h1>
+          <span>Esquadrias de Vidro com padrão premium</span>
+        </div>
+      </a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn">Menu</button>
+
+      <nav class="menu" id="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#atendimento">Atendimento</a>
+        <a href="#contato">Contato</a>
+        <a class="btn btn-primary" href="https://wa.me/551191033084?text=Olá,%20vim%20pelo%20site%20da%20Estrela%20Vidros%20e%20quero%20solicitar%20um%20orçamento." target="_blank">Solicitar orçamento</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Atendimento em Mogi das Cruzes, Igaratá, SP e região</div>
+          <h2>Vidro com presença, acabamento e padrão <strong>premium</strong>.</h2>
+          <p>
+            A <strong>Estrela Vidros</strong> transforma projetos em ambientes sofisticados, modernos e valorizados. Com atuação forte na região e execução profissional, a empresa entrega soluções em vidro com estética impecável, segurança e atenção real a cada detalhe.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/551191033084?text=Olá,%20vim%20pelo%20site%20da%20Estrela%20Vidros%20e%20quero%20solicitar%20um%20orçamento." target="_blank">Solicitar orçamento</a>
+            <a class="btn btn-secondary" href="#projetos">Ver projetos</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="mini-card">
+              <strong>2 anos de atuação</strong>
+              <span>Crescimento sólido com entrega profissional.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Estética refinada</strong>
+              <span>Projetos que valorizam cada ambiente.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Atendimento regional</strong>
+              <span>Mogi, Igaratá, SP e cidades da região.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-card">
+            <img src="images/hero.jpg" alt="Projeto premium em vidro da Estrela Vidros" />
+            <div class="hero-overlay">
+              <h3>Projetos que elevam o valor do imóvel</h3>
+              <p>
+                Soluções em vidro com visual moderno, execução segura e acabamento elegante para residências e espaços comerciais.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h3>Uma empresa séria para projetos que exigem confiança.</h3>
+            <p>Quem procura vidro de alto padrão procura mais do que instalação: procura segurança, estética, durabilidade e uma empresa que entregue exatamente o que promete.</p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <article class="card reveal">
+            <h4>Quem é a Estrela Vidros</h4>
+            <p>
+              A <strong>Estrela Vidros</strong> é especializada em esquadrias e soluções em vidro, com foco em acabamento premium, apresentação impecável e atendimento profissional. Em pouco tempo de atuação, a empresa vem se consolidando com presença forte no mercado e credibilidade construída em cada projeto entregue.
+            </p>
+            <ul class="list">
+              <li>Atendimento claro, profissional e próximo do cliente</li>
+              <li>Projetos com estética moderna e acabamento refinado</li>
+              <li>Compromisso com qualidade, confiança e valorização do ambiente</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h4>Nosso compromisso</h4>
+            <p>
+              Cada serviço é executado com responsabilidade, organização e atenção aos detalhes. O objetivo é entregar ambientes mais elegantes, funcionais e visualmente marcantes, sempre com o padrão que uma empresa séria precisa transmitir.
+            </p>
+            <ul class="list">
+              <li>Materiais e execução com padrão profissional</li>
+              <li>Soluções que valorizam residências e comércios</li>
+              <li>Presença forte em Mogi das Cruzes e região</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h3>Soluções sob medida em vidro</h3>
+            <p>Projetos desenvolvidos para unir sofisticação, transparência, valorização do ambiente e acabamento de alto nível.</p>
+          </div>
+        </div>
+
+        <div class="service-grid">
+          <article class="card service-card reveal">
+            <span class="tag">Residencial</span>
+            <h4>Box e divisórias em vidro</h4>
+            <p>Leveza visual, sofisticação e funcionalidade em projetos executados com instalação profissional e excelente acabamento.</p>
+          </article>
+
+          <article class="card service-card reveal">
+            <span class="tag">Modernização</span>
+            <h4>Portas, janelas e esquadrias</h4>
+            <p>Soluções elegantes para transformar espaços com iluminação natural, transparência e uma presença arquitetônica marcante.</p>
+          </article>
+
+          <article class="card service-card reveal">
+            <span class="tag">Valorização</span>
+            <h4>Guarda-corpos e fechamentos</h4>
+            <p>Mais segurança, imponência e acabamento contemporâneo para áreas internas e externas de imóveis residenciais ou comerciais.</p>
+          </article>
+
+          <article class="card service-card reveal">
+            <span class="tag">Comercial</span>
+            <h4>Fachadas e vitrines</h4>
+            <p>Projetos em vidro que fortalecem a imagem do negócio, elevam a percepção de valor do espaço e destacam a apresentação do ambiente.</p>
+          </article>
+
+          <article class="card service-card reveal">
+            <span class="tag">Sob medida</span>
+            <h4>Projetos personalizados</h4>
+            <p>Cada ambiente possui uma proposta. Por isso, cada solução é pensada para se alinhar à estética, ao uso e ao perfil do cliente.</p>
+          </article>
+
+          <article class="card service-card reveal">
+            <span class="tag">Atendimento regional</span>
+            <h4>Execução com presença e confiança</h4>
+            <p>Atuação em Mogi das Cruzes, Igaratá, São Paulo e região, levando atendimento comprometido e entrega profissional em cada projeto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h3>Diferenciais que reforçam a força da marca</h3>
+            <p>O site precisa transmitir confiança imediata. Por isso, esta seção foi pensada para passar solidez, padrão e credibilidade.</p>
+          </div>
+        </div>
+
+        <div class="differentials-grid">
+          <article class="card diff-card reveal">
+            <strong>Acabamento de alto padrão</strong>
+            <p>Detalhes que comunicam profissionalismo, bom gosto e excelência visual.</p>
+          </article>
+
+          <article class="card diff-card reveal">
+            <strong>Atendimento com seriedade</strong>
+            <p>Postura profissional do primeiro contato até a entrega final do projeto.</p>
+          </article>
+
+          <article class="card diff-card reveal">
+            <strong>Projetos que valorizam o imóvel</strong>
+            <p>O vidro certo transforma a estética e aumenta a percepção de valor do ambiente.</p>
+          </article>
+
+          <article class="card diff-card reveal">
+            <strong>Presença regional consolidada</strong>
+            <p>Atuação forte em Mogi das Cruzes, Igaratá, SP e cidades vizinhas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h3>Projetos realizados</h3>
+            <p>Galeria com imagens reais da empresa para reforçar autoridade, qualidade de execução e percepção premium.</p>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="card gallery-item reveal">
+            <div class="gallery-photo"><img src="images/projeto1.jpg" alt="Escada com guarda-corpo em vidro" /></div>
+            <div class="gallery-info">
+              <strong>Guarda-corpo em vidro</strong>
+              <p>Solução sofisticada para interiores com visual leve e acabamento refinado.</p>
+            </div>
+          </article>
+
+          <article class="card gallery-item reveal">
+            <div class="gallery-photo"><img src="images/projeto2.jpg" alt="Box de banheiro em vidro" /></div>
+            <div class="gallery-info">
+              <strong>Box com estética clean</strong>
+              <p>Projeto funcional com transparência, elegância e presença discreta.</p>
+            </div>
+          </article>
+
+          <article class="card gallery-item reveal">
+            <div class="gallery-photo"><img src="images/projeto3.jpg" alt="Banheiro com box de vidro" /></div>
+            <div class="gallery-info">
+              <strong>Acabamento impecável</strong>
+              <p>Aplicação sob medida para valorizar o espaço e manter a sofisticação do ambiente.</p>
+            </div>
+          </article>
+
+          <article class="card gallery-item reveal">
+            <div class="gallery-photo"><img src="images/projeto4.jpg" alt="Cobertura de vidro em área com piscina" /></div>
+            <div class="gallery-info">
+              <strong>Cobertura de vidro</strong>
+              <p>Proteção, luminosidade e visual moderno para áreas externas premium.</p>
+            </div>
+          </article>
+
+          <article class="card gallery-item reveal">
+            <div class="gallery-photo"><img src="images/projeto5.jpg" alt="Estrutura de cobertura de vidro" /></div>
+            <div class="gallery-info">
+              <strong>Estrutura robusta e elegante</strong>
+              <p>Projeto que combina presença arquitetônica, segurança e transparência.</p>
+            </div>
+          </article>
+
+          <article class="card gallery-item reveal">
+            <div class="gallery-photo"><img src="images/projeto6.jpg" alt="Cobertura de vidro vista por baixo" /></div>
+            <div class="gallery-info">
+              <strong>Integração e iluminação</strong>
+              <p>Vidro aplicado para ampliar a entrada de luz e destacar o ambiente.</p>
+            </div>
+          </article>
+
+          <article class="card gallery-item reveal">
+            <div class="gallery-photo"><img src="images/projeto7.jpg" alt="Painel de espelho decorativo" /></div>
+            <div class="gallery-info">
+              <strong>Espelhos decorativos</strong>
+              <p>Composição sofisticada para interiores com visual contemporâneo.</p>
+            </div>
+          </article>
+
+          <article class="card gallery-item reveal">
+            <div class="gallery-photo"><img src="images/projeto8.jpg" alt="Banheiro premium com fechamento em vidro" /></div>
+            <div class="gallery-info">
+              <strong>Banheiro premium</strong>
+              <p>Projeto com linguagem moderna, transparência e acabamento de alto padrão.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="atendimento">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h3>Área de atendimento</h3>
+            <p>Atendimento profissional do orçamento à entrega, com presença regional e foco em obras residenciais e comerciais.</p>
+          </div>
+        </div>
+
+        <div class="areas-grid">
+          <article class="card area-item reveal">
+            <strong>Mogi das Cruzes</strong>
+            <p>Atuação forte na cidade e arredores.</p>
+          </article>
+          <article class="card area-item reveal">
+            <strong>Igaratá</strong>
+            <p>Atendimento com o mesmo padrão de excelência.</p>
+          </article>
+          <article class="card area-item reveal">
+            <strong>São Paulo</strong>
+            <p>Soluções em vidro para residências e comércios.</p>
+          </article>
+          <article class="card area-item reveal">
+            <strong>Região</strong>
+            <p>Consulte disponibilidade para sua localidade.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div>
+            <h3>Seu projeto merece uma empresa à altura.</h3>
+            <p>
+              Solicite seu orçamento com a Estrela Vidros e tenha atendimento profissional, apresentação impecável e uma solução pensada para valorizar o seu espaço.
+            </p>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/551191033084?text=Olá,%20vim%20pelo%20site%20da%20Estrela%20Vidros%20e%20quero%20solicitar%20um%20orçamento." target="_blank">Solicitar orçamento</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h3>Contato</h3>
+            <p>Uma apresentação clara para facilitar a tomada de decisão e o fechamento do cliente.</p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <article class="card reveal">
+            <div class="contact-item">
+              <span>WhatsApp</span>
+              <strong>(11) 91033-084</strong>
+            </div>
+            <br />
+            <div class="contact-item">
+              <span>Instagram</span>
+              <strong>@daniloestrelavidros</strong>
+            </div>
+            <br />
+            <div class="contact-item">
+              <span>Atendimento</span>
+              <strong>Mogi das Cruzes, Igaratá, SP e região</strong>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h4>Mensagem institucional</h4>
+            <p>
+              Na Estrela Vidros, cada projeto é tratado com responsabilidade, bom gosto e atenção aos detalhes. O objetivo é entregar mais do que vidro: entregar valorização, sofisticação e confiança em cada ambiente.
+            </p>
+            <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+              <a class="btn btn-primary" href="https://wa.me/551191033084?text=Olá,%20vim%20pelo%20site%20da%20Estrela%20Vidros%20e%20quero%20solicitar%20um%20orçamento." target="_blank">Falar no WhatsApp</a>
+              <a class="btn btn-secondary" href="https://www.instagram.com/daniloestrelavidros/" target="_blank">Ver Instagram</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <p>© 2026 Estrela Vidros. Todos os direitos reservados.</p>
+      <p>Esquadrias de vidro com estética, confiança e padrão profissional.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/551191033084?text=Olá,%20vim%20pelo%20site%20da%20Estrela%20Vidros%20e%20quero%20solicitar%20um%20orçamento." target="_blank" aria-label="Falar no WhatsApp">✆</a>
+
+  <script>
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const menu = document.getElementById("menu");
+
+    mobileMenuBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    document.querySelectorAll("#menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("active");
+      });
+    });
+
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    reveals.forEach(item => observer.observe(item));
+  </script>
+</body>
+</html>
